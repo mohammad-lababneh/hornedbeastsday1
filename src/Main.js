@@ -8,7 +8,7 @@ class Main extends Component {
             keyword: 'narwhal',
             horns: 1,
             imgUrl:
-                "http://3.bp.blogspot.com/_DBYF1AdFaHw/TE-f0cDQ24I/AAAAAAAACZg/l-FdTZ6M7z8/s1600/Unicorn_and_Narwhal_by_dinglehopper.jpg "
+                "http://3.bp.blogspot.com/_DBYF1AdFaHw/TE-f0cDQ24I/AAAAAAAACZg/l-FdTZ6M7z8/s1600/Unicorn_and_Narwhal_by_dinglehopper.jpg " 
         },
 
         {
@@ -35,6 +35,7 @@ class Main extends Component {
       
       <Hornedbeasts title={Information[2].title} description={Information[2].description} keyword={Information[2].keyword} horns={Information[2].horns} imgUrl={Information[2].imgUrl} />
             </div>
+
         )
     }
 }

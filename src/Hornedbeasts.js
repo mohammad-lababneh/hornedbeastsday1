@@ -8,7 +8,9 @@ import React, { Component } from 'react'
                 <p>{this.props.description}</p>
                 <h2>{this.props.keyword}</h2>
                 <h3>{this.props.horns}</h3>
-                <img>{this.props.imgUrl}</img>
+                <img src={this.props.imgUrl} style={{width: 150} }
+/>
+
             </div>
         )
     }
