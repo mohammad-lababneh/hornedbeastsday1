@@ -1,41 +1,50 @@
 import React, { Component } from 'react'
 import Hornedbeasts from './Hornedbeasts'
+import hornsData from './hornsData.json'
+// import React from 'react';
+// import { Button } from 'reactstrap';
 class Main extends Component {
-    render() {
-        let Information = [{
-            title: 'Rhino Family',
-            description: 'A unicorn and a narwhal nuzzling their horns',
-            keyword: 'narwhal',
-            horns: 1,
-            imgUrl:
-                "http://3.bp.blogspot.com/_DBYF1AdFaHw/TE-f0cDQ24I/AAAAAAAACZg/l-FdTZ6M7z8/s1600/Unicorn_and_Narwhal_by_dinglehopper.jpg " 
-        },
 
-        {
-            title: 'UniWhal',
-            description: 'Mother (or father) rhino with two babies', keyword: 'rhino', horns: 2, imgUrl:
-                "https://images.unsplash.com/photo-1512636618879-bbe79107e9e3?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=bd9460ee6d1ddbb6b1ca7be86dfc4590&auto=format&fit=crop&w=1825&q=80 "
-        },
-
-        {
-            title: 'UniWhal',
-            description: 'Mother (or father) rhino with two babies', keyword: 'rhino', horns: 2, imgUrl:
-                ' https://images.unsplash.com/photo-1512636618879-bbe79107e9e3?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=bd9460ee6d1ddbb6b1ca7be86dfc4590&auto=format&fit=crop&w=1825&q=80 '
+    constructor(props) {
+        super(props);
+        this.state = {
+            galary: 0
         }
-        ] 
+    }
+
+    react = () => {
+        this.setState(
+            {
+                galary: this.state.galary + 1
+            })
+    }
+    // const printImages=()
+    render() {
+        console.log(typeof this.state.galary);
+        console.log(this.state)
 
         return (
             <div>
-     
-    
-      <Hornedbeasts title={Information[0].title} description={Information[0].description} keyword={Information[0].keyword} horns={Information[0].horns} imgUrl={Information[0].imgUrl} />
 
-      <Hornedbeasts title={Information[1].title} description={Information[1].description} keyword={Information[1].keyword} horns={Information[1].horns} imgUrl={Information[1].imgUrl} />
+                {
+                    hornsData.map((item) => {
+                        return <div>
+                            <p>{item.title}</p>
+                            <p>{item.description}</p>
+                            <p>{item.keyword}</p>
+                            <p>{item.horns}</p>
+                            <img src={item.image_url} style={
+                                { width: 300 }} />
+                            <h1>{this.state.galary}</h1>
+                            <button onClick={this.react} style={{ borderRadius: 8 }}>React</button>
+                        </div>
+                    })
+                }
+                <hornsData />
+                <Hornedbeasts/>
+                {/* <Button/> */}
 
-      
-      <Hornedbeasts title={Information[2].title} description={Information[2].description} keyword={Information[2].keyword} horns={Information[2].horns} imgUrl={Information[2].imgUrl} />
-            </div>
-
+            </div >
         )
     }
 }

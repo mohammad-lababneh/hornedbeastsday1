@@ -4,7 +4,7 @@ import React, { Component } from 'react'
     render() {
         return (
             <div>
-               <h1>UniWhal</h1>  
+               <h1>Welcom In UniWhal</h1>  
             </div>
         )
     }
