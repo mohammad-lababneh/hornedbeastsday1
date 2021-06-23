@@ -2,8 +2,10 @@ import React, { Component } from 'react'
 import Header from './Header';
 import Main from './Main';
 import Footer from './Footer';
+import Modalhorned from './Modalhorned';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import {Container} from 'react-bootstrap';
+
 
 class App extends React.Component {
   render() {
@@ -11,11 +13,13 @@ class App extends React.Component {
     return (
 
       <>
+      
         <Header />
         <Container>
         <Main />
         </Container>
         <Footer />
+        <Modalhorned />
 
       </>
     )
