@@ -14,8 +14,6 @@ class Hornedbeasts extends Component {
             })
     }
     render() {
-        // console.log(this.state.galary)
-        console.log(this.props)
         return (
             <Col sm={3}>
                 <Card bg={'warning '}>
@@ -30,16 +28,6 @@ class Hornedbeasts extends Component {
                     </Card.Body>
                 </Card>
             </Col>
-            // <div style={{ height:600  }, {margin:15}}>
-            //     <h1>{this.props.title}</h1>
-            //     <p>{this.props.description}</p>
-            //     <h2>{this.props.keyword}</h2>
-            //     <h3>{this.props.horns}</h3>
-            //     <img src={this.props.imgUrl}  style={{ width:250 }}  />
-            //     <h3>{this.state.galary}</h3>
-            //     <span onClick={this.increaseClick} style={{ height:250 }}>
-            //     💛</span>
-            // </div>
         )
     }
 }

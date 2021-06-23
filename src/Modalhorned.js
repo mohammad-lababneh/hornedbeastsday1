@@ -1,30 +1,33 @@
 import React, { Component } from 'react'
-import { Modal, Button,closeButton } from 'react-bootstrap';
+import hornsData from './hornsData.json'
+import Main from './Main';
+
+import Hornedbeasts from './Hornedbeasts'
+import { Modal, Button, closeButton, Row } from 'react-bootstrap';
 class Modalhorned extends Component {
-   
-    constructor(){
+
+    constructor() {
         super()
         this.state = {
             show: false
         }
-
     }
-    handelmodal(){
-        this.setState({show:!this.state.show})
+    handelmodal() {
+        this.setState({ show: !this.state.show })
     }
-   
-   
     render() {
-        
+
         return (
-            <div>
-<Button onClick={()=>{this.handelmodal()}}>open Modal</Button>
-                <Modal show={this.state.show} onHide={()=>this.handelmodal()}>
-                    <Modal.Header closeButton>hi from the head</Modal.Header>
-                    <Modal.Body>hi from the body</Modal.Body>
-                    <Modal.Footer><Button onClick={()=>{this.handelmodal()}}>close Modal</Button></Modal.Footer>
-                </Modal>
-            </div>
+
+            <Modal show={this.state.show} onHide={() => this.handelmodal()}>
+            <Button onClick={() => { this.handelmodal() }}>open Modal</Button>
+            <Modal.Header closeButton>
+            <Modal.Title></Modal.Title></Modal.Header>
+            <Modal.Body></Modal.Body>
+            <Modal.Footer><Button onClick={() => { this.handelmodal() }}>close Modal</Button></Modal.Footer>
+            </Modal>
+
+
         )
     }
 }
