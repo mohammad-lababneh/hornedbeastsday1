@@ -9,15 +9,13 @@ export class Modalhorned extends Component {
         return (
 
             <>
-                {/* <Button variant="primary" onClick={handleShow}>
-                    Launch static backdrop modal
-                </Button> */}
+            
 
                 <Modal
                     show={this.props.showdata}
-                    onHide={this.props.showdata}
-                    backdrop="static"
-                    keyboard={this.props.showdata}
+                    // onHide={this.props.showdata}
+                    // backdrop="static"
+                    // keyboard={this.props.showdata}
                 >
                     <Modal.Header >
                         <Modal.Title>{this.props.modaldata.title}</Modal.Title>
