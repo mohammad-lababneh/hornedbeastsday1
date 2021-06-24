@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
-import { Modal, Button} from 'react-bootstrap';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import { Modal, Button } from 'react-bootstrap';
 class Modalhorned extends Component {
 
     constructor() {
@@ -14,16 +15,16 @@ class Modalhorned extends Component {
     render() {
 
         return (
+            <>
+                {/* <Button onClick={() => { this.handelmodal() }}>open Modal</Button>
+                <Modal show={this.state.show} onHide={() => this.handelmodal()}>
+                    <Modal.Header closeButton>
+                        <Modal.Title></Modal.Title></Modal.Header>
+                    <Modal.Body></Modal.Body>
+                    <Modal.Footer><Button onClick={() => { this.handelmodal() }}>close Modal</Button></Modal.Footer>
+                </Modal> */}
 
-            <Modal show={this.state.show} onHide={() => this.handelmodal()}>
-            <Button onClick={() => { this.handelmodal() }}>open Modal</Button>
-            <Modal.Header closeButton>
-            <Modal.Title>yyyyy</Modal.Title></Modal.Header>
-            <Modal.Body></Modal.Body>
-            <Modal.Footer><Button onClick={() => { this.handelmodal() }}>close Modal</Button></Modal.Footer>
-            </Modal>
-
-
+            </>
         )
     }
 }

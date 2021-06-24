@@ -7,6 +7,7 @@ class Main extends Component {
     render() {
         return (
             <Row>{
+
                 hornsData.map((item) => {
                     return (<Hornedbeasts
                         imgUrl={item.image_url}
@@ -14,6 +15,7 @@ class Main extends Component {
                         description={item.description}
                         keyword={item.keyword}
                         horns={item.horns}
+                        // handelmodal={this.props.handelmodal}
                     />)
                 })
             }
