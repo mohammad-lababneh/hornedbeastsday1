@@ -1,28 +1,26 @@
 import React, { Component } from 'react'
-import { NavItem } from 'reactstrap'
 import Hornedbeasts from './Hornedbeasts'
 import hornsData from './hornsData.json'
-import { Card, Button, Col, Row } from 'react-bootstrap';
-// import React from 'react';
-// import { Button } from 'reactstrap';
+import Modalhorned from './Modalhorned'
+import {  Row } from 'react-bootstrap';
 class Main extends Component {
-    // const printImages=()
     render() {
         return (
             <Row>{
-            hornsData.map((item) => {
-                return <Hornedbeasts
+
+                hornsData.map((item) => {
+                    return (<Hornedbeasts
                         imgUrl={item.image_url}
                         title={item.title}
                         description={item.description}
                         keyword={item.keyword}
-                        horns={item.horns} />
-            })
-        }
-             </Row>
-        )  
-      
+                        horns={item.horns}
+                        // handelmodal={this.props.handelmodal}
+                    />)
+                })
+            }
+            </Row>
+        )
     }
 }
-
 export default Main

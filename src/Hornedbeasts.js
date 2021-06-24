@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Card, Button, Col } from 'react-bootstrap';
+import { Card, Button, Col, Modal, ModalBody } from 'react-bootstrap';
 class Hornedbeasts extends Component {
     constructor(props) {
         super(props);
@@ -7,6 +7,14 @@ class Hornedbeasts extends Component {
             galary: 0
         }
     }
+
+
+
+    handelmodal() {
+        this.setState({ show: !this.state.show })
+    }
+
+
     increaseClick = () => {
         this.setState(
             {
@@ -14,12 +22,24 @@ class Hornedbeasts extends Component {
             })
     }
     render() {
-        // console.log(this.state.galary)
-        console.log(this.props)
-        return (
+        return (<>
+            {/* <Button onClick={() => { this.handelmodal() }}>open Modal</Button> */}
+            <Modal show={this.state.show} onHide={() => this.handelmodal()}>
+                <Modal.Header >
+                    
+                <Modal.Title>{this.props.title}</Modal.Title></Modal.Header>
+                <Modal.Body>{this.props.description}</Modal.Body>
+                <Modal.Body> <Card.Img onClick={() => { this.handelmodal() }} variant="top" src={this.props.imgUrl} style={{ width: 250 }} /></Modal.Body>
+                <ModalBody> {this.props.keyword}</ModalBody>
+                <ModalBody> {this.props.horns}</ModalBody>
+                <ModalBody> {this.state.galary}</ModalBody>
+                <Modal.Footer><Button onClick={() => { this.handelmodal() }}>close Modal</Button></Modal.Footer>
+            </Modal>
+
+
             <Col sm={3}>
                 <Card bg={'warning '}>
-                    <Card.Img variant="top" src={this.props.imgUrl} style={{ width: 250 } }  />
+                    <Card.Img onClick={() => { this.handelmodal() }} variant="top" src={this.props.imgUrl} style={{ width: 250 }} />
                     <Card.Body>
                         <Card.Title>{this.props.title}</Card.Title>
                         <Card.Text> {this.props.description} </Card.Text>
@@ -30,16 +50,7 @@ class Hornedbeasts extends Component {
                     </Card.Body>
                 </Card>
             </Col>
-            // <div style={{ height:600  }, {margin:15}}>
-            //     <h1>{this.props.title}</h1>
-            //     <p>{this.props.description}</p>
-            //     <h2>{this.props.keyword}</h2>
-            //     <h3>{this.props.horns}</h3>
-            //     <img src={this.props.imgUrl}  style={{ width:250 }}  />
-            //     <h3>{this.state.galary}</h3>
-            //     <span onClick={this.increaseClick} style={{ height:250 }}>
-            //     💛</span>
-            // </div>
+        </>
         )
     }
 }
