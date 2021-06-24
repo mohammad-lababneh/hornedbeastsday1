@@ -34,7 +34,7 @@ handelmodal(data) {
         <Main  data={this.state.hornsData}/>
         </Container>
         <Footer />
-        <Modalhorned handelmodal={this.handelmodal} showdata={this.state.show}  data={this.state.hornsData}/>
+        <Modalhorned />
 
       </>
     )

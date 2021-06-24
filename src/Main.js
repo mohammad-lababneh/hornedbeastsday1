@@ -1,9 +1,8 @@
 import React, { Component } from 'react'
-import { NavItem } from 'reactstrap'
 import Hornedbeasts from './Hornedbeasts'
 import hornsData from './hornsData.json'
 import Modalhorned from './Modalhorned'
-import { Card, Button, Col, Row } from 'react-bootstrap';
+import {  Row } from 'react-bootstrap';
 class Main extends Component {
     render() {
         return (
