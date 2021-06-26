@@ -1,26 +1,29 @@
+
 import React, { Component } from 'react'
 import Hornedbeasts from './Hornedbeasts'
-import hornsData from './hornsData.json'
-import Modalhorned from './Modalhorned'
-import {  Row } from 'react-bootstrap';
+import { Row } from 'react-bootstrap';
 class Main extends Component {
+    constructor(props) {
+        super(props);
+    }
     render() {
+        this.x = this.props.dataParentToChild
         return (
             <Row>{
-
-                hornsData.map((item) => {
-                    return (<Hornedbeasts
-                        imgUrl={item.image_url}
-                        title={item.title}
-                        description={item.description}
-                        keyword={item.keyword}
-                        horns={item.horns}
-                        // handelmodal={this.props.handelmodal}
-                    />)
-                })
+                this.x.map(i => {
+                    return (
+                        <Hornedbeasts
+                            imgUrl={i.image_url}
+                            title={i.title}
+                            description={i.description}
+                            horns={i.horns}
+                            keyword={i.keyword}
+                        />
+                    )
+                } )
             }
-            </Row>
-        )
+            </Row >)
     }
 }
 export default Main
+
