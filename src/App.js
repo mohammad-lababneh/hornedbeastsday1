@@ -1,73 +1,53 @@
+
 import React, { Component } from 'react'
 import Header from './Header';
 import Main from './Main';
 import Footer from './Footer';
 import hornsData from './hornsData'
-import Hornedbeasts from './Hornedbeasts';
-import Filter from './Filter';
-import Products from './Products';
+import ModelHornedbeats from './ModelHornedbeats';
+import Select from './Select';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Container } from 'react-bootstrap';
-class App extends React.Component {
+export class App extends React.Component {
 
   myArray = [];
   constructor() {
     super()
     this.myArray = hornsData;
   }
-
-    // this.state = {
-    //   show: false,
-    //   hornsData: hornsData,
-    //   modaldata: {},
-    // }
-  
-
-
-  handelmodal(data) {
-    this.setState({
-      show: !this.state.show,
-      modaldata: data,
-    })
-  }
-
-
-  generateNewList = (xx) => {
+  hornedList = (e) => {
     this.myArray = [];
     for (let i = 0; i < hornsData.length; i++) {
-      if (hornsData[i].horns == xx) {
+      if (hornsData[i].horns == e) {
         this.myArray.push(hornsData[i])
       }
-
+      else if (e == 0){
+        this.myArray.push(hornsData[i])
+      }
     }
     this.forceUpdate();
   }
-
-  handleCallback(xx) {
-    this.generateNewList(xx);
+  callList(e) {
+    this.hornedList(e);
 
   }
-
   render() {
 
     return (
-
       <>
-{/* data={this.state.hornsData} sorting={this.sorting} */}
-        <Header />
-        <Products  handleCallback={this.handleCallback} generateNewList={this.generateNewList} myArray={this.myArray} />
-        <Container>
-        {/* data={this.state.hornsData} handelmodal={this.handelmodal} dataParentToChild={this.myArray} */}
-          <Main dataParentToChild={this.myArray}/>
-        </Container>
-        <Filter />
-        <Footer />
+                <ModelHornedbeats />
+                <Header />
+                <Select callList={this.callList} hornedList={this.hornedList} myArray={this.myArray} />
+                <Container>
+                <Main dataParentToChild={this.myArray} />
+                </Container>
+                <Footer />
       </>
     )
   }
 }
-
 export default App;
+
 
 
 
