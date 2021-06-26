@@ -3,8 +3,10 @@ import Header from './Header';
 import Main from './Main';
 import Footer from './Footer';
 import hornsData from './hornsData.json'
-import Modalhorned from './Modalhorned';
+import Product from './Product';
 import Hornedbeasts from './Hornedbeasts';
+import Filter from './Filter';
+import Products from './Products';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Container } from 'react-bootstrap';
 class App extends React.Component {
@@ -14,6 +16,8 @@ class App extends React.Component {
     this.state = {
       show: false,
       hornsData: hornsData,
+      sort: '',
+      cat: '',
       modaldata: {},
     }
   }
@@ -23,6 +27,7 @@ class App extends React.Component {
       modaldata: data,
     })
   }
+
   render() {
 
     return (
@@ -30,13 +35,15 @@ class App extends React.Component {
       <>
 
         <Header />
+        <Products data={this.state.hornsData} sorting={this.sorting}/>
         <Container>
-          <Main data={this.state.hornsData} handelmodal={this.handelmodal} />
+        <Main data={this.state.hornsData} handelmodal={this.handelmodal} />
         </Container>
-        <Footer />
-        <Modalhorned />
-        {/* <Hornedbeasts data={this.state.hornsData} handelmodal={this.handelmodal} /> */}
+        <Filter />
+        <Product />
 
+        {/* <Hornedbeasts data={this.state.hornsData} handelmodal={this.handelmodal} /> */}
+        <Footer />
       </>
     )
   }

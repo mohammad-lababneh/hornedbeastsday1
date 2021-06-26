@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Card, Button, Col, Modal, ModalBody } from 'react-bootstrap';
+import { Card, Button, Col, Modal, ModalBody,Form } from 'react-bootstrap';
 class Hornedbeasts extends Component {
     constructor(props) {
         super(props);
@@ -22,11 +22,13 @@ class Hornedbeasts extends Component {
             })
     }
     render() {
-        return (<>
+        return (
+            <>
+        
             {/* <Button onClick={() => { this.handelmodal() }}>open Modal</Button> */}
+
             <Modal show={this.state.show} onHide={() => this.handelmodal()}>
                 <Modal.Header >
-                    
                 <Modal.Title>{this.props.title}</Modal.Title></Modal.Header>
                 <Modal.Body>{this.props.description}</Modal.Body>
                 <Modal.Body> <Card.Img onClick={() => { this.handelmodal() }} variant="top" src={this.props.imgUrl} style={{ width: 250 }} /></Modal.Body>

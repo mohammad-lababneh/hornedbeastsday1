@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import Hornedbeasts from './Hornedbeasts'
+import Products from './Products'
 import hornsData from './hornsData.json'
-import Modalhorned from './Modalhorned'
 import {  Row } from 'react-bootstrap';
 class Main extends Component {
     render() {
@@ -16,7 +16,9 @@ class Main extends Component {
                         keyword={item.keyword}
                         horns={item.horns}
                         // handelmodal={this.props.handelmodal}
-                    />)
+                    />
+           
+                    ) 
                 })
             }
             </Row>
